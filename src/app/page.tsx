@@ -1,69 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ServiceAccordion, type Service } from "@/components/service-accordion";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+const services:Service[]=[
+{title:"Corporate Tax",description:"Strategic corporate tax advisory and compliance services tailored to evolving UAE tax regulations.",items:["Tax registration & compliance","Impact assessment","Transfer pricing support"],href:"https://g12accounts.ae/corporate-tax/"},
+{title:"Audit & Assurance",description:"Independent audit services that strengthen financial transparency, accuracy and regulatory confidence.",items:["Statutory audit","Internal audit","Financial review"],href:"https://g12accounts.ae/audit-assurance/"},
+{title:"VAT Services",description:"End-to-end VAT registration, filing, compliance and advisory that keeps your business ready.",items:["VAT registration","Return filing","Voluntary disclosure"],href:"https://g12accounts.ae/vat/"},
+{title:"International Tax",description:"Cross-border tax planning and advisory that supports global operations with clarity and confidence.",items:["Cross-border structuring","Tax treaty advisory","Global compliance"],href:"https://g12accounts.ae/international-tax/"},
+{title:"Customs Services",description:"Practical customs solutions that simplify cross-border trade, optimise duties and reduce risk.",items:["Customs advisory","Duty optimisation","Import and export support"],href:"https://g12accounts.ae/customs-services/"},
+{title:"Compliance",description:"Clear governance and regulatory support that helps your business meet its obligations with confidence.",items:["Corporate governance","Regulatory support","Compliance reviews"],href:"https://g12accounts.ae/compliance-services/"}];
+const insights=[
+{category:"Corporate Tax",time:"2 min read",title:"Beyond compliance: building a corporate tax strategy that supports growth",href:"https://g12accounts.ae/corporate-tax-strategy-that-supports-growth/"},
+{category:"VAT",time:"1 min read",title:"Five VAT risks growing businesses often overlook",href:"https://g12accounts.ae/five-vat-risks-growing-businesses-overlook/"},
+{category:"Advisory",time:"1 min read",title:"What better management reporting can unlock",href:"https://g12accounts.ae/what-better-management-reporting-can-unlock/"},
+{category:"International Tax",time:"1 min read",title:"Cross-border growth: the questions to ask first",href:"https://g12accounts.ae/cross-border-growth-questions-to-ask-first/"}];
+
+function SectionLabel({number,children,light=false}:{number:string;children:React.ReactNode;light?:boolean}){return <div className={`section-label${light?" section-label--light":""}`}><span>{number}</span>{children}</div>}
+
+export default function Home(){return <main>
+<section className="hero" aria-labelledby="hero-title"><Image className="hero__image" src="/images/g12-hero.png" alt="Dubai skyline viewed from a contemporary business terrace" fill priority sizes="100vw"/><div className="hero__shade"/><div className="hero__grid" aria-hidden="true"/><div className="hero__content"><div className="eyebrow"><span/>Financial clarity for ambitious businesses</div><h1 id="hero-title">Precision behind<br/><em>every decision.</em></h1><p>Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.</p><div className="hero__actions"><Link className="button button--primary" href="https://g12accounts.ae/contact-us/">Start a conversation <span>↗</span></Link><Link className="text-link text-link--light" href="#expertise">Explore our expertise <span>↓</span></Link></div></div><div className="hero__proof"><strong>18+</strong><span>Years of<br/>advisory experience</span></div><span className="hero__location">Dubai · United Arab Emirates</span><Link className="hero__scroll" href="#about"><span>↓</span> Discover</Link></section>
+<section className="trust-strip" aria-label="Key capabilities"><p>One trusted partner across</p><div><span>Accounting</span><i/><span>Tax</span><i/><span>Audit</span><i/><span>Advisory</span><i/><span>Compliance</span></div></section>
+<section className="section intro" id="about"><SectionLabel number="01">Who we are</SectionLabel><div className="intro__content"><h2>Your finances should do more than meet requirements. They should <em>move your business forward.</em></h2><div className="intro__detail"><p>We combine technical expertise with practical business insight to help UAE companies stay compliant, improve performance and plan for sustainable growth.</p><Link className="text-link" href="https://g12accounts.ae/about-us/">Meet your advisory partner <span>↗</span></Link></div></div><div className="stats"><div><strong>18<sup>+</sup></strong><span>Years of experience</span></div><div><strong>7</strong><span>Integrated disciplines</span></div><div><strong>360<sup>°</sup></strong><span>Financial perspective</span></div></div></section>
+<section className="section expertise" id="expertise"><SectionLabel number="02">Our expertise</SectionLabel><div className="section-heading"><h2>Everything your business needs.<br/><em>Nothing it doesn’t.</em></h2><p>Specialist expertise brought together around your business—not delivered in disconnected silos.</p></div><ServiceAccordion services={services}/></section>
+<section className="perspective"><div className="perspective__image"><Image src="/images/g12-perspective-advisory.jpg" alt="Senior financial advisors reviewing a business plan" fill sizes="(max-width: 800px) 100vw, 50vw"/><span aria-hidden="true">G12</span></div><div className="perspective__content"><SectionLabel number="03" light>The G12 perspective</SectionLabel><h2>Compliance is the baseline.<br/><em>Progress is the goal.</em></h2><p>We look beyond the numbers to understand what drives your business. That means commercially grounded advice, direct access to experienced professionals and solutions built around the decisions ahead.</p><Link className="button button--outline" href="https://g12accounts.ae/about-us/">Why businesses choose us <span>↗</span></Link></div></section>
+<section className="section advantages"><SectionLabel number="04">Built differently</SectionLabel><div className="advantage-grid"><article><span>✦</span><h3>Senior expertise,<br/>personally involved.</h3><p>Led by finance professionals with more than 18 years of hands-on advisory experience.</p></article><article><span>◫</span><h3>One view of your<br/>whole business.</h3><p>Accounting, tax, audit, compliance and advisory connected under one trusted partner.</p></article><article><span>↗</span><h3>Advice designed<br/>for momentum.</h3><p>We help you make smarter financial decisions, reduce friction and plan beyond the next deadline.</p></article></div></section>
+<section className="quote"><div className="quote__rule"/><blockquote><span aria-hidden="true">“</span><p>The strongest financial advice doesn’t only explain where you are. It gives you the confidence to decide <em>where to go next.</em></p></blockquote><div className="quote__meta"><span>G12 Accounts</span><span>Strategic financial partner</span><span>UAE</span></div></section>
+<section className="section insights"><SectionLabel number="05">Timely perspectives</SectionLabel><div className="section-heading section-heading--align"><h2>Clarity for what’s<br/><em>coming next.</em></h2><Link className="text-link" href="https://g12accounts.ae/insights/">View all insights <span>↗</span></Link></div><div className="insight-grid"><article className="insight-featured"><Link className="insight-featured__visual" href={insights[0].href}><span>UAE<br/>TAX<br/>2026</span></Link><div><small>{insights[0].category} · {insights[0].time}</small><h3><Link href={insights[0].href}>{insights[0].title}</Link></h3><Link aria-label={`Read ${insights[0].title}`} href={insights[0].href}>↗</Link></div></article><div className="insight-list">{insights.slice(1).map(insight=><article key={insight.title}><small>{insight.category} · {insight.time}</small><h3><Link href={insight.href}>{insight.title}</Link></h3><Link aria-label={`Read ${insight.title}`} href={insight.href}>↗</Link></article>)}</div></div></section>
+<section className="contact-section"><div className="contact-section__rings" aria-hidden="true"/><div><SectionLabel number="06" light>Start a conversation</SectionLabel><h2>Ready to move forward<br/>with <em>clarity?</em></h2><p>Tell us what your business is working toward. We’ll bring the right financial perspective.</p><div className="contact-section__actions"><a className="button button--primary" href="mailto:finance@g12.ae">finance@g12.ae <span>↗</span></a><a href="tel:+97145706451">+971 4 570 6451</a></div></div></section>
+</main>}

@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { Brand } from "@/components/brand";
+export function SiteFooter(){return <footer className="site-footer"><div className="footer-main"><Brand light/><p>Financial clarity for ambitious businesses across the UAE.</p><Link className="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></Link></div><div className="footer-rule"/><div className="footer-bottom"><span>© 2026 G12 Accounts. All rights reserved.</span><div className="footer-links"><Link href="https://g12accounts.ae/privacy-policy/">Privacy policy</Link><Link href="https://g12accounts.ae/contact-us/">Contact</Link></div><a href="https://g12.ae/" target="_blank" rel="noreferrer">A member of the <strong>G12</strong> group ↗</a></div></footer>}

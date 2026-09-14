@@ -1,0 +1,5 @@
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+export type Service={title:string;description:string;items:string[];href:string};
+export function ServiceAccordion({services}:{services:Service[]}){const[active,setActive]=useState(0);return <div className="service-list">{services.map((service,index)=>{const isOpen=active===index;return <article className={`service-item${isOpen?" service-item--open":""}`} key={service.title}><button className="service-trigger" type="button" aria-expanded={isOpen} aria-controls={`service-panel-${index}`} onClick={()=>setActive(index)}><span className="service-number">{String(index+1).padStart(2,"0")}</span><span className="service-title">{service.title}</span><span className="service-arrow" aria-hidden="true">↗</span></button><div className="service-panel" id={`service-panel-${index}`} aria-hidden={!isOpen}><div className="service-panel__inner"><p>{service.description}</p><ul>{service.items.map(item=><li key={item}>{item}</li>)}</ul><Link href={service.href}>Explore {service.title} <span aria-hidden="true">↗</span></Link></div></div></article>})}</div>}

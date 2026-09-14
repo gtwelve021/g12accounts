@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Local browser review artifacts
+.playwright-cli/
+output/playwright/

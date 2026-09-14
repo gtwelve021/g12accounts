@@ -1,0 +1,1 @@
+export function SectionLabel({number,children,light=false}:{number:string;children:React.ReactNode;light?:boolean}){return <div className={`section-label${light?" section-label--light":""}`}><span>{number}</span>{children}</div>}

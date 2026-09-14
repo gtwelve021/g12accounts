@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { SectionLabel } from "@/components/section-label";
+export function ContactBand(){return <section className="contact-section"><div className="contact-section__rings" aria-hidden="true"/><div><SectionLabel number="06" light>Start a conversation</SectionLabel><h2>Ready to move forward<br/>with <em>clarity?</em></h2><p>Tell us what your business is working toward. We’ll bring the right financial perspective.</p><div className="contact-section__actions"><Link className="button button--primary" href="/contact-us/">Start a conversation <span>↗</span></Link><a href="tel:+97145706451">+971 4 570 6451</a></div></div></section>}

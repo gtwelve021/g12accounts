@@ -16,11 +16,11 @@ export function ContactForm() {
     const formData = new FormData(event.currentTarget);
 
     try {
-      const response = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(Array.from(formData.entries(), ([key, value]) => [key, String(value)])).toString(),
-      });
+      const response = await fetch("/api/contact", { method: "POST", body: formData });
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error || "Submission failed");
+      }
       if (!response.ok) throw new Error("Submission failed");
       router.push("/thank-you/");
     } catch {

@@ -16,11 +16,39 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://g12accounts.ae"),
-  title: "Accounting, Tax & Audit Services UAE | G12 Accounts",
+  title: {
+    default: "Accounting, Tax & Audit Services UAE | G12 Accounts",
+    template: "%s | G12 Accounts",
+  },
   applicationName: "G12 Accounts",
   description: "Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.",
+  keywords: ["accounting services UAE", "corporate tax UAE", "audit services Dubai", "VAT services UAE", "financial advisory UAE"],
+  authors: [{ name: "G12 Accounts", url: "https://g12accounts.ae" }],
+  creator: "G12 Accounts",
+  publisher: "G12 Accounts",
+  category: "Financial Services",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_AE",
+    url: "/",
+    siteName: "G12 Accounts",
+    title: "Accounting, Tax & Audit Services UAE | G12 Accounts",
+    description: "Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.",
+    images: [{ url: "/images/g12-hero.png", width: 1586, height: 992, alt: "G12 Accounts — financial clarity for UAE businesses" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accounting, Tax & Audit Services UAE | G12 Accounts",
+    description: "Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.",
+    images: ["/images/g12-hero.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
 };
 

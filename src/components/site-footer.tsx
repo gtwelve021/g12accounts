@@ -3,7 +3,7 @@ import { Brand } from "@/components/brand";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#030b1c] px-6 pt-[68px] pb-7 text-white xl:px-[max(24px,calc((100vw-1240px)/2))]">
+    <footer className="bg-primary px-6 pt-[68px] pb-7 text-white xl:px-[max(24px,calc((100vw-1240px)/2))]">
       <div className="grid items-center gap-6 max-[680px]:justify-items-start min-[681px]:grid-cols-3">
         <Brand light />
         <p className="max-w-[270px] justify-self-center text-center text-sm leading-[1.4] italic tracking-[.01em] text-white/50 max-[680px]:justify-self-start max-[680px]:text-left">Financial clarity for ambitious businesses across the UAE.</p>

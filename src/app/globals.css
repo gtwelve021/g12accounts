@@ -40,3 +40,6 @@ body, .form-grid input, .form-grid select, .form-grid textarea { font-family: va
 .footer-main p { font-size:14px;font-style:italic;letter-spacing:.01em; }
 .footer-bottom { grid-template-columns:1fr 1fr; }
 .footer-bottom>a { justify-self:end; }
+
+/* The header belongs to the page flow; it must never pin itself while scrolling. */
+.site-header--solid { position:absolute; }

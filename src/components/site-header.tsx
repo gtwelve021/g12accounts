@@ -22,14 +22,6 @@ const serviceLinks = [
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -37,8 +29,8 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className={`site-header${scrolled || menuOpen ? " site-header--solid" : ""}`} id="top">
-      <Brand light={!scrolled && !menuOpen} />
+    <header className={`site-header${menuOpen ? " site-header--solid" : ""}`} id="top">
+      <Brand light={!menuOpen} />
       <nav className="desktop-nav" aria-label="Main navigation">
         {primaryLinks.slice(0, 2).map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
         <div className="nav-dropdown">

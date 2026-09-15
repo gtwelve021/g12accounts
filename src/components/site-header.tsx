@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Brand } from "@/components/brand";
+import { ConsultationModal } from "@/components/consultation-modal";
 
 const primaryLinks = [
   { href: "/", label: "Home" },
@@ -24,12 +25,13 @@ const serviceLinks = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [consultationOpen, setConsultationOpen] = useState(false);
   const isHome = pathname === "/";
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.body.style.overflow = menuOpen || consultationOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
-  }, [menuOpen]);
+  }, [menuOpen, consultationOpen]);
 
   return (
     <header className={`site-header${isHome ? " site-header--home" : ""}${menuOpen ? " site-header--solid" : ""}`} id="top">
@@ -44,7 +46,7 @@ export function SiteHeader() {
         </div>
         {primaryLinks.slice(2).map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
       </nav>
-      <Link className="header-cta" href="/contact-us/">Book a consultation <span aria-hidden="true">↗</span></Link>
+      <button className="header-cta" type="button" onClick={() => setConsultationOpen(true)}>Book a consultation <span aria-hidden="true">↗</span></button>
       <button className={`menu-toggle${menuOpen ? " menu-toggle--open" : ""}`} type="button" aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen((open) => !open)}><span /><span /></button>
       <nav className={`mobile-nav${menuOpen ? " mobile-nav--open" : ""}`} id="mobile-menu" aria-label="Mobile navigation">
         {primaryLinks.slice(0, 2).map((link, index) => <Link href={link.href} key={link.label} onClick={() => setMenuOpen(false)}><small>{String(index + 1).padStart(2, "0")}</small>{link.label}</Link>)}
@@ -54,6 +56,7 @@ export function SiteHeader() {
         </div>
         {primaryLinks.slice(2).map((link, index) => <Link href={link.href} key={link.label} onClick={() => setMenuOpen(false)}><small>{String(index + 4).padStart(2, "0")}</small>{link.label}</Link>)}
       </nav>
+      <ConsultationModal open={consultationOpen} onClose={() => setConsultationOpen(false)} />
     </header>
   );
 }

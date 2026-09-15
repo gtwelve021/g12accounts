@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 
-export function ContactForm() {
+export function ContactForm({ variant = "page" }: { variant?: "page" | "modal" }) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -29,9 +29,9 @@ export function ContactForm() {
     }
   }
 
-  return <form className="contact-form" name="g12-enquiry" onSubmit={handleSubmit}>
+  return <form className={`contact-form${variant === "modal" ? " contact-form--modal" : ""}`} name="g12-enquiry" onSubmit={handleSubmit}>
     <input type="hidden" name="form-name" value="g12-enquiry"/>
-    <h2>How can we help?</h2>
+    {variant === "page" && <h2>How can we help?</h2>}
     <div className="form-grid">
       <label>First name<input name="first-name" autoComplete="given-name" required/></label>
       <label>Last name<input name="last-name" autoComplete="family-name" required/></label>

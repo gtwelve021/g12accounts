@@ -52,6 +52,13 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
+  icons: {
+    icon: [
+      { url: "/images/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/images/icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

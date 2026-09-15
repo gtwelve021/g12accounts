@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme { --color-g12-navy:#06142d; --color-g12-blue:#2f5fc2; --color-g12-gold:#deaf61; --color-g12-paper:#f4f1e9; }
+@theme { --color-g12-navy:#06142d; --color-g12-blue:#2447a8; --color-g12-gold:#d6a456; --color-g12-paper:#f4f7fb; }
 
 :root {
     --navy: #06142d;
@@ -1417,180 +1417,10 @@ h2 em {
     line-height: 1.7
 }
 
-.thank-you {
-    position: relative;
-    min-height: 100svh;
-    padding: 150px 24px 85px;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    color: #fff;
-    background: linear-gradient(130deg, #030b1c, #071a3c 58%, #123b7e)
-}
-
-.thank-you>section {
-    position: relative;
-    z-index: 2;
-    width: min(900px, 100%);
-    text-align: center
-}
-
-.thank-you__status {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
-    color: #a9c0f8;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .2em;
-    text-transform: uppercase
-}
-
-.thank-you__status:before {
-    content: "";
-    width: 28px;
-    height: 1px;
-    background: var(--gold)
-}
-
-.thank-you h1 {
-    margin: 0;
-    font-size: clamp(62px, 9vw, 125px);
-    font-weight: 500;
-    line-height: .9;
-    letter-spacing: -.065em
-}
-
-.thank-you h1 em {
-    color: #a9c0f8
-}
-
-.thank-you section>p {
-    max-width: 650px;
-    margin: 35px auto 0;
-    color: #ffffffb5;
-    font-size: 16px;
-    line-height: 1.8
-}
-
-.thank-you__actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    margin-top: 44px
-}
-
-.thank-you__orbit {
-    position: absolute;
-    width: min(75vw, 850px);
-    height: min(75vw, 850px);
-    border: 1px solid #ffffff17;
-    border-radius: 50%
-}
-
-.thank-you__orbit:before,
-.thank-you__orbit:after {
-    content: "";
-    position: absolute;
-    inset: 12%;
-    border: 1px solid #ffffff12;
-    border-radius: 50%
-}
-
-.thank-you__orbit:after {
-    inset: 27%
-}
-
-.thank-you__orb {
-    position: absolute;
-    right: 12%;
-    top: 20%;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: #3664d466;
-    filter: blur(25px)
-}
-
-.thank-you__note {
-    position: absolute;
-    z-index: 2;
-    bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #ffffff73;
-    font-size: 9px;
-    letter-spacing: .12em;
-    text-transform: uppercase
-}
-
-.thank-you__note span {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--gold)
-}
-
-.policy__layout {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: clamp(45px, 9vw, 130px);
-    align-items: start;
-    margin-top: 65px
-}
-
-.policy aside {
-    position: sticky;
-    top: 110px;
-    padding-top: 22px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 11px;
-    line-height: 1.7
-}
-
-.policy aside a {
-    display: inline-block;
-    margin-top: 20px;
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase
-}
-
-.policy__content>section {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    gap: 20px;
-    padding: 0 0 50px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid var(--line)
-}
-
-.policy__content>section>span {
-    padding-top: 10px;
-    color: var(--blue);
-    font-size: 9px
-}
-
-.policy__content h2 {
-    font-size: clamp(30px, 3.2vw, 45px);
-    margin-bottom: 22px
-}
-
-.policy__content p {
-    margin: 0 0 16px;
-    color: var(--muted);
-    line-height: 1.85
-}
 
 @media(max-width:800px) {
     .inner-intro__grid,
-    .contact-layout,
-    .policy__layout {
+    .contact-layout {
         grid-template-columns: 1fr;
         margin-left: 0
     }
@@ -1620,14 +1450,6 @@ h2 em {
 
     .contact-form {
         padding: 30px
-    }
-
-    .policy aside {
-        position: static
-    }
-
-    .thank-you__actions {
-        flex-direction: column
     }
 
     .group-section {
@@ -1770,30 +1592,6 @@ h2 em {
         padding: 24px 20px
     }
 
-    .thank-you {
-        padding-top: 120px
-    }
-
-    .thank-you h1 {
-        font-size: 58px
-    }
-
-    .thank-you section>p {
-        font-size: 14px
-    }
-
-    .thank-you__actions {
-        margin-top: 35px
-    }
-
-    .policy__content>section {
-        grid-template-columns: 32px 1fr;
-        gap: 10px
-    }
-
-    .policy__content h2 {
-        font-size: 30px
-    }
 }
 
 /* Production visual alignment: desktop navigation and contact form */

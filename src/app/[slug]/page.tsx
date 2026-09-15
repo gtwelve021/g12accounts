@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ContactBand } from "@/components/contact-band";
 import { PageHero } from "@/components/page-hero";
@@ -25,6 +26,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
     <PageHero index={isPost ? "07" : "03"} label={page.label} title={<>{page.title}<br/><em>{page.emphasis}</em></>} description={page.description} />
     <section className="section inner-intro">
       <SectionLabel number="01">{isPost ? "G12 perspective" : "Our expertise"}</SectionLabel>
+      {!isPost && page.image && <div className="content-page__image"><Image src={page.image} alt={`${page.label} advisory`} fill sizes="(max-width: 800px) 100vw, 1240px"/></div>}
       <div className="inner-intro__grid">
         <h2>{isPost ? "Useful perspective for clearer decisions." : "Specialist advice, clearly connected to your business."}</h2>
         <div>{page.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>

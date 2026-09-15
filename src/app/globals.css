@@ -43,6 +43,10 @@ body, .form-grid input, .form-grid select, .form-grid textarea { font-family: va
 
 /* The header belongs to the page flow; it must never pin itself while scrolling. */
 .site-header--solid { position:absolute; }
+.site-header--home { color:#142847; background:#edf3ff; border-color:#d7e1f0; }
+.site-header--home .desktop-nav a,.site-header--home .header-cta { color:#142847; }
+.site-header--home .header-cta { border-color:#142847; }
+@media(max-width:980px){.site-header--home{color:#142847;background:#edf3ff;border-color:#d7e1f0}.site-header--home .mobile-nav{color:#fff}.site-header--home.site-header--solid{color:#fff;background:transparent;border-color:transparent}.site-header--home.site-header--solid .brand--dark{display:none}.site-header--home.site-header--solid .brand--light{display:flex}}
 
 /* Full service-page system, shared by all six expertise routes. */
 .service-page-intro .inner-intro__grid { margin-bottom:55px; }

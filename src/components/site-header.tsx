@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Brand } from "@/components/brand";
 
@@ -21,7 +22,9 @@ const serviceLinks = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isHome = pathname === "/";
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -29,8 +32,8 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className={`site-header${menuOpen ? " site-header--solid" : ""}`} id="top">
-      <Brand light={!menuOpen} />
+    <header className={`site-header${isHome ? " site-header--home" : ""}${menuOpen ? " site-header--solid" : ""}`} id="top">
+      <Brand light={!isHome && !menuOpen} />
       <nav className="desktop-nav" aria-label="Main navigation">
         {primaryLinks.slice(0, 2).map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
         <div className="nav-dropdown">

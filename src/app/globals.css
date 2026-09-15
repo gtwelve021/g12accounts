@@ -43,3 +43,38 @@ body, .form-grid input, .form-grid select, .form-grid textarea { font-family: va
 
 /* The header belongs to the page flow; it must never pin itself while scrolling. */
 .site-header--solid { position:absolute; }
+
+/* Full service-page system, shared by all six expertise routes. */
+.service-page-intro .inner-intro__grid { margin-bottom:55px; }
+.service-page-intro .inner-intro__grid>p { margin:0; color:var(--muted); font-size:16px; line-height:1.85; }
+.service-page-services { background:#fff; box-shadow:0 0 0 100vmax #fff; clip-path:inset(0 -100vmax); }
+.service-page-heading { display:grid; grid-template-columns:1fr .6fr; gap:80px; align-items:end; margin:58px 0 70px clamp(0px,7vw,110px); }
+.service-page-heading h2,.service-page-process h2 { margin:0; font-size:clamp(42px,5vw,70px); font-weight:400; line-height:.98; letter-spacing:-.05em; }
+.service-page-heading p { max-width:360px; margin:0; color:var(--muted); font-size:15px; line-height:1.8; }
+.service-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); }
+.service-detail-grid article { min-height:275px; padding:34px clamp(25px,4vw,60px) 38px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+.service-detail-grid article:nth-child(even) { padding-left:clamp(25px,4vw,60px); padding-right:0; border-right:0; }
+.service-detail-grid span,.service-process-grid span { color:var(--blue); font-size:9px; font-weight:700; letter-spacing:.16em; }
+.service-detail-grid h3 { margin:72px 0 16px; font-size:clamp(25px,2.4vw,34px); font-weight:500; line-height:1.05; }
+.service-detail-grid p { max-width:440px; margin:0; color:var(--muted); font-size:14px; line-height:1.75; }
+.service-page-process { padding-bottom:130px; background:#f3f6fc; box-shadow:0 0 0 100vmax #f3f6fc; clip-path:inset(0 -100vmax); }
+.service-page-process h2 { max-width:650px; margin:58px 0 60px clamp(0px,7vw,110px); }
+.service-process-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #ccd7eb; }
+.service-process-grid article { min-height:215px; padding:30px 30px 20px 0; border-right:1px solid #ccd7eb; }
+.service-process-grid article+article { padding-left:30px; }
+.service-process-grid article:last-child { border-right:0; }
+.service-process-grid p { margin:62px 0 0; color:var(--muted); font-size:14px; line-height:1.7; }
+.service-readiness { display:grid; place-items:center; min-height:560px; padding:95px 24px; color:#fff; text-align:center; background:linear-gradient(130deg,#06142d,#123d84); }
+.service-readiness>div { max-width:790px; }
+.service-readiness .section-label { justify-content:center; }
+.service-readiness h2 { margin:48px 0 26px; font-size:clamp(45px,6vw,78px); font-weight:400; line-height:.95; letter-spacing:-.055em; }
+.service-readiness p { max-width:610px; margin:0 auto 40px; color:rgba(255,255,255,.78); font-size:16px; line-height:1.85; }
+.service-faq { background:#fff; box-shadow:0 0 0 100vmax #fff; clip-path:inset(0 -100vmax); }
+.faq-list { margin-left:clamp(0px,7vw,110px); border-top:1px solid var(--line); }
+.faq-list details { border-bottom:1px solid var(--line); }
+.faq-list summary { display:flex; justify-content:space-between; gap:30px; padding:25px 0; cursor:pointer; list-style:none; font-size:18px; font-weight:500; }
+.faq-list summary::-webkit-details-marker { display:none; }
+.faq-list summary span { color:var(--blue); font-size:25px; font-weight:400; line-height:.75; }
+.faq-list details[open] summary span { transform:rotate(45deg); }
+.faq-list p { max-width:720px; margin:0; padding:0 50px 25px 0; color:var(--muted); font-size:14px; line-height:1.8; }
+@media(max-width:800px){.service-page-heading{grid-template-columns:1fr;gap:25px;margin-left:0}.service-detail-grid,.service-process-grid{grid-template-columns:1fr}.service-detail-grid article,.service-detail-grid article:nth-child(even){min-height:auto;padding:30px 0;border-right:0}.service-detail-grid h3{margin-top:45px}.service-process-grid article,.service-process-grid article+article{min-height:auto;padding:28px 0;border-right:0;border-bottom:1px solid #ccd7eb}.service-process-grid p{margin-top:35px}.service-page-process h2{margin-left:0}.service-readiness{min-height:500px}.faq-list{margin-left:0}}

@@ -39,7 +39,7 @@ export function SiteHeader() {
       <nav className="desktop-nav" aria-label="Main navigation">
         {primaryLinks.slice(0, 2).map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
         <div className="nav-dropdown">
-          <button type="button" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></button>
+          <button className="nav-dropdown__trigger" type="button" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></button>
           <div className="nav-dropdown__menu">
             {serviceLinks.map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
           </div>

@@ -39,7 +39,7 @@ export function SiteHeader() {
       <nav className="desktop-nav" aria-label="Main navigation">
         {primaryLinks.slice(0, 2).map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
         <div className="nav-dropdown">
-          <Link href="/expertise/" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></Link>
+          <button type="button" aria-haspopup="true">Services <span aria-hidden="true">⌄</span></button>
           <div className="nav-dropdown__menu">
             {serviceLinks.map((link) => <Link href={link.href} key={link.label}>{link.label}</Link>)}
           </div>
@@ -51,7 +51,7 @@ export function SiteHeader() {
       <nav className={`mobile-nav${menuOpen ? " mobile-nav--open" : ""}`} id="mobile-menu" aria-label="Mobile navigation">
         {primaryLinks.slice(0, 2).map((link, index) => <Link href={link.href} key={link.label} onClick={() => setMenuOpen(false)}><small>{String(index + 1).padStart(2, "0")}</small>{link.label}</Link>)}
         <div className="mobile-services">
-          <Link href="/expertise/" onClick={() => setMenuOpen(false)}><small>03</small>Services</Link>
+          <span><small>03</small>Services</span>
           <div className="mobile-services__links">{serviceLinks.map((link) => <Link href={link.href} key={link.label} onClick={() => setMenuOpen(false)}>{link.label}</Link>)}</div>
         </div>
         {primaryLinks.slice(2).map((link, index) => <Link href={link.href} key={link.label} onClick={() => setMenuOpen(false)}><small>{String(index + 4).padStart(2, "0")}</small>{link.label}</Link>)}

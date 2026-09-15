@@ -36,9 +36,9 @@ export function ContactForm() {
       <label>First name<input name="first-name" autoComplete="given-name" required/></label>
       <label>Last name<input name="last-name" autoComplete="family-name" required/></label>
       <label>Work email<input name="email" type="email" autoComplete="email" required/></label>
-      <label>Phone<input name="phone" type="tel" autoComplete="tel"/></label>
-      <label className="full">Area of support<select name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Corporate Tax</option><option>Audit &amp; Assurance</option><option>VAT Services</option><option>International Tax</option><option>Customs &amp; Compliance</option><option>Accounting &amp; Reporting</option></select></label>
-      <label className="full">Tell us about your requirement<textarea name="message" rows={5} required/></label>
+      <label>Phone<input name="phone" type="tel" autoComplete="tel" required/></label>
+      <label className="full">Area of support<select name="service" defaultValue="Corporate Tax" required><option>Corporate Tax</option><option>Audit &amp; Assurance</option><option>VAT Services</option><option>International Tax</option><option>Customs &amp; Compliance</option><option>Accounting &amp; Reporting</option></select></label>
+      <label className="full">How can we help?<textarea name="message" rows={5} required/></label>
       <label className="consent full"><input type="checkbox" name="privacy-consent" value="accepted" required/><span>I agree to G12 Accounts using my information to respond to this enquiry. See the <Link href="/privacy-policy/">Privacy Policy</Link>.</span></label>
     </div>
     {error && <p className="form-error" role="alert">{error}</p>}

@@ -28,7 +28,7 @@ export function ContactForm({ variant = "page" }: { variant?: "page" | "modal" }
   }
 
   const modal = variant === "modal";
-  return <form className={modal ? "bg-transparent" : "bg-[#eaf0fb] p-6 min-[521px]:p-12"} name="g12-enquiry" onSubmit={handleSubmit}>
+  return <form className={modal ? "bg-transparent" : "editorial-form"} name="g12-enquiry" onSubmit={handleSubmit}>
     <input type="hidden" name="form-name" value="g12-enquiry" />
     {!modal && <h2 className="mb-10 text-[clamp(42px,4vw,58px)] font-normal">How can we help?</h2>}
     <div className={`mb-[34px] grid grid-cols-2 gap-x-[22px] gap-y-[26px] max-[520px]:grid-cols-1 ${modal ? "mb-[22px] gap-x-[18px] gap-y-[22px] max-[700px]:grid-cols-1" : ""}`}>

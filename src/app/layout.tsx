@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { MotionSystem } from "@/components/motion-system";
 import "./globals.css";
+import "./editorial.css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",

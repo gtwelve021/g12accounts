@@ -19,17 +19,19 @@ export function MotionSystem() {
 
     const context = gsap.context(() => {
       const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-      heroTimeline
-        .fromTo("[data-hero-reveal]", { y: 46, opacity: 0 }, { y: 0, opacity: 1, duration: 1.05, stagger: 0.1 })
-        .fromTo("[data-hero-panel]", { x: 38, opacity: 0, rotateY: -7 }, { x: 0, opacity: 1, rotateY: 0, duration: 1.2 }, "-=0.75");
+      if (document.querySelector("[data-hero-reveal]")) {
+        heroTimeline.fromTo("[data-hero-reveal]", { y: 32 }, { y: 0, duration: 0.9, stagger: 0.08 });
+      }
+      if (document.querySelector("[data-hero-panel]")) {
+        heroTimeline.fromTo("[data-hero-panel]", { y: 35, scale: 0.97 }, { y: 0, scale: 1, duration: 1.1 }, "-=0.65");
+      }
 
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
         gsap.fromTo(
           element,
-          { y: 54, opacity: 0 },
+          { y: 32 },
           {
             y: 0,
-            opacity: 1,
             duration: 0.95,
             ease: "power3.out",
             scrollTrigger: { trigger: element, start: "top 86%", once: true },

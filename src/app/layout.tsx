@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Montserrat } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { MotionSystem } from "@/components/motion-system";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -67,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full"><SiteHeader />{children}<SiteFooter /></body>
+      <body className="min-h-full"><MotionSystem /><SiteHeader />{children}<SiteFooter /></body>
     </html>
   );
 }

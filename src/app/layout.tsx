@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     siteName: "G12 Accounts",
     title: "Accounting, Tax & Audit Services UAE | G12 Accounts",
     description: "Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.",
-    images: [{ url: "/images/live/architectural-hero.jpg", width: 1586, height: 992, alt: "G12 Accounts — financial clarity for UAE businesses" }],
+    images: [{ url: "/images/g12-future-hero.png", width: 2048, height: 768, alt: "G12 Accounts — financial clarity for UAE businesses" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Accounting, Tax & Audit Services UAE | G12 Accounts",
     description: "Accounting, tax, audit and strategic advisory for businesses building their future in the UAE.",
-    images: ["/images/live/architectural-hero.jpg"],
+    images: ["/images/g12-future-hero.png"],
   },
   robots: {
     index: true,

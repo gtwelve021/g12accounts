@@ -29,10 +29,10 @@ export default function ContactPage() {
         <ContactForm/>
       </div>
     </section>
-    <section className="grid bg-[#1b3f7c] text-white min-[801px]:grid-cols-3">
-      <article className="min-h-[290px] border-r border-white/20 px-[clamp(28px,4vw,65px)] py-[55px] max-[800px]:min-h-0 max-[800px]:border-r-0 max-[800px]:border-b max-[800px]:py-[35px]"><span className="text-[9px] uppercase tracking-[.14em] text-g12-gold">01 / Relevant</span><h3 className="mt-[75px] mb-[18px] text-[30px] font-medium max-[800px]:mt-9">The right specialist.</h3><p className="leading-[1.7] text-white/70">Your enquiry is routed according to the service and expertise required.</p></article>
-      <article className="min-h-[290px] border-r border-white/20 px-[clamp(28px,4vw,65px)] py-[55px] max-[800px]:min-h-0 max-[800px]:border-r-0 max-[800px]:border-b max-[800px]:py-[35px]"><span className="text-[9px] uppercase tracking-[.14em] text-g12-gold">02 / Responsive</span><h3 className="mt-[75px] mb-[18px] text-[30px] font-medium max-[800px]:mt-9">A clear next step.</h3><p className="leading-[1.7] text-white/70">We come back with a practical response and the information needed to move ahead.</p></article>
-      <article className="min-h-[290px] px-[clamp(28px,4vw,65px)] py-[55px] max-[800px]:min-h-0 max-[800px]:py-[35px]"><span className="text-[9px] uppercase tracking-[.14em] text-g12-gold">03 / Confidential</span><h3 className="mt-[75px] mb-[18px] text-[30px] font-medium max-[800px]:mt-9">Handled with care.</h3><p className="leading-[1.7] text-white/70">Your business information is treated professionally and shared only where necessary.</p></article>
+    <section className="hero-mesh grid gap-16 px-6 py-[110px] text-white min-[801px]:grid-cols-3 min-[801px]:px-[max(24px,calc((100vw-1240px)/2))]">
+      <article data-reveal className="max-w-[310px]"><span className="font-serif text-[76px] leading-none text-white/10">01</span><h3 className="mt-3 mb-[18px] text-[30px] font-medium">The right specialist.</h3><p className="leading-[1.8] text-white/70">Your enquiry is routed according to the service and expertise required.</p></article>
+      <article data-reveal className="max-w-[310px] min-[801px]:mt-20"><span className="font-serif text-[76px] leading-none text-white/10">02</span><h3 className="mt-3 mb-[18px] text-[30px] font-medium">A clear next step.</h3><p className="leading-[1.8] text-white/70">We come back with a practical response and the information needed to move ahead.</p></article>
+      <article data-reveal className="max-w-[310px]"><span className="font-serif text-[76px] leading-none text-white/10">03</span><h3 className="mt-3 mb-[18px] text-[30px] font-medium">Handled with care.</h3><p className="leading-[1.8] text-white/70">Your business information is treated professionally and shared only where necessary.</p></article>
     </section>
   </main>;
 }

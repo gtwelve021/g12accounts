@@ -51,7 +51,7 @@ export function SiteHeader() {
         <div className="group relative flex h-full items-center">
           <button className="flex h-full items-center border-0 bg-transparent p-0 text-xs font-medium text-inherit" type="button" aria-haspopup="true">Services <span className="ml-1 text-[10px]" aria-hidden="true">⌄</span></button>
           <div className="invisible absolute top-full left-[-18px] z-20 min-w-[220px] -translate-y-[7px] border-t-2 border-g12-gold bg-g12-navy py-3 opacity-0 shadow-[0_14px_30px_rgba(0,0,0,.18)] transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-            {serviceLinks.map((link) => <Link className="block whitespace-nowrap px-[18px] py-[9px] text-[11px] tracking-[.045em] text-white hover:bg-white/[.06] hover:text-g12-gold focus-visible:bg-white/[.06] focus-visible:text-g12-gold" href={link.href} key={link.label}>{link.label}</Link>)}
+            {serviceLinks.map((link) => <Link className="service-menu-link block whitespace-nowrap px-[18px] py-[9px] text-[11px] tracking-[.045em] text-white hover:bg-white/[.06] hover:text-g12-gold focus-visible:bg-white/[.06] focus-visible:text-g12-gold" href={link.href} key={link.label}>{link.label}</Link>)}
           </div>
         </div>
         {primaryLinks.slice(2).map((link) => <Link className={`${desktopLink} ${pathname === link.href ? "after:scale-x-100" : ""}`} href={link.href} key={link.label}>{link.label}</Link>)}
